@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Artist" col="4">
+    <label name="last_name"/>
+    <field name="last_name"/>
+    <label name="first_name"/>
+    <field name="first_name"/>
+    <label name="rev_name"/>
+    <field name="rev_name" colspan="3"/>
+    <label name="full_name"/>
+    <field name="full_name" colspan="3"/>
+    <label name="songs"/>
+    <field name="songs" colspan="4"/>
+</form>

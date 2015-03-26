@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: trytond_party
+Version: 3.0.1
+Summary: Tryton module for DJ/KJ Musice Database
+Home-page: http://www.tryton.org/
+Author: Mark S Hayden (Coalesco Digital Systems Inc.)
+Author-email: info@coalesco.ca
+License: GPL-3
+Download-URL: https://coalesco.ca/
+Description: trytond_songbook
+        =============
+        
+        The songbook module of the Tryton application platform.
+
+        This module creates a music database for use by DJ and Karaoke
+        service business.
+ 
+        Installing
+        ----------
+        
+        See INSTALL
+        
+        Support
+        -------
+        
+        If you encounter any problems with Tryton, please don't hesitate to ask
+        questions on the Tryton bug tracker, mailing list, wiki or IRC channel:
+        
+          http://bugs.tryton.org/
+          http://groups.tryton.org/
+          http://wiki.tryton.org/
+          irc://irc.freenode.net/tryton
+        
+        License
+        -------
+        
+        See LICENSE
+        
+        Copyright
+        ---------
+        
+        See COPYRIGHT
+        
+        
+        For more information please visit the Tryton web site:
+        
+          http://www.tryton.org/
+
+        For more information about this module in particular:
+
+          mailto:info@coalesco.ca
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Plugins
+Classifier: Framework :: Tryton
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Entertainment Industry
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Natural Language :: English
+Classifier: Natural Language :: French
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Office/Business

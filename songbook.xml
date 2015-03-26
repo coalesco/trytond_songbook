@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record model="res.group" id="group_songbook_admin">
+            <field name="name">Songbook Administrator</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_songbook_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_songbook_admin"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_songbook_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_songbook_admin"/>
+        </record>
+
+        <menuitem name="Songbook" id="menu_songbook" sequence="10"/>
+
+        <record model="ir.ui.view" id="songbook_view_tree">
+            <field name="model">songbook.songbook</field>
+            <field name="type">tree</field>
+            <field name="name">songbook_tree</field>
+        </record>
+        <record model="ir.ui.view" id="songbook_view_form">
+            <field name="model">songbook.songbook</field>
+            <field name="type">form</field>
+            <field name="name">songbook_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_songbook_form">
+            <field name="name">Songbooks</field>
+            <field name="res_model">songbook.songbook</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_songbook_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="songbook_view_tree"/>
+            <field name="act_window" ref="act_songbook_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_songbook_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="songbook_view_form"/>
+            <field name="act_window" ref="act_songbook_form"/>
+        </record>
+        <record model="ir.ui.view" id="songbook_export_tracks_start_view_form">
+            <field name="model">songbook.songbook.export_tracks.start</field>
+            <field name="type">form</field>
+            <field name="name">songbook_export_tracks_start_view_form</field>
+        </record>
+        <record model="ir.ui.view" id="songbook_export_tracks_result_view_form">
+            <field name="model">songbook.songbook.export_tracks.result</field>
+            <field name="type">form</field>
+            <field name="name">songbook_export_tracks_result_view_form</field>
+        </record>
+        <record model="ir.action.wizard" id="act_songbook_export_tracks">
+            <field name="name">Export Tracks in This Songbook</field>
+            <field name="wiz_name">songbook.songbook.export_tracks</field>
+        </record>
+        <record model="ir.action.keyword" id="act_songbook_export_tracks_songbook">
+            <field name="keyword">form_action</field>
+            <field name="model">songbook.songbook,-1</field>
+            <field name="action" ref="act_songbook_export_tracks"/>
+        </record>
+        <record model="ir.action.report" id="report_songs_by_title">
+            <field name="name">Songs By Title</field>
+            <field name="model">songbook.songbook</field>
+            <field name="report_name">songbook.songs_by_title</field>
+            <field name="report">songbook/songbook_songs_by_title.odt</field>
+            <field name="style">songbook/songbook_style.odt</field>
+            <field name="template_extension">odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_songs_by_title_songbook">
+            <field name="keyword">form_print</field>
+            <field name="model">songbook.songbook,-1</field>
+            <field name="action" ref="report_songs_by_title"/>
+        </record>
+        <record model="ir.action.report" id="report_songs_by_artist">
+            <field name="name">Songs By Artist</field>
+            <field name="model">songbook.songbook</field>
+            <field name="report_name">songbook.songs_by_artist</field>
+            <field name="report">songbook/songbook_songs_by_artist.odt</field>
+            <field name="style">songbook/songbook_style.odt</field>
+            <field name="template_extension">odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_songs_by_artist_songbook">
+            <field name="keyword">form_print</field>
+            <field name="model">songbook.songbook,-1</field>
+            <field name="action" ref="report_songs_by_artist"/>
+        </record>
+        <menuitem parent="menu_songbook" sequence="11" action="act_songbook_form" id="menu_songbook_form"/>
+
+    </data>
+</tryton>

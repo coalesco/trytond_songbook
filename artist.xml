@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record model="ir.ui.view" id="artist_view_tree">
+            <field name="model">songbook.artist</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">artist_tree</field>
+        </record>
+        <record model="ir.ui.view" id="artist_view_form">
+            <field name="model">songbook.artist</field>
+            <field name="type">form</field>
+            <field name="name">artist_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_artist_form">
+            <field name="name">Artists</field>
+            <field name="res_model">songbook.artist</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_artist_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="artist_view_tree"/>
+            <field name="act_window" ref="act_artist_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_artist_form_view2">
+          <field name="sequence" eval="20"/>
+          <field name="view" ref="artist_view_form"/>
+          <field name="act_window" ref="act_artist_form"/>
+        </record>
+        <menuitem name="Artists" parent="menu_songbook" sequence="14" action="act_artist_form" id="menu_artist_form"/>
+
+    </data>
+</tryton>

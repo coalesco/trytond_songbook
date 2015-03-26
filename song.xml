@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record model="ir.ui.view" id="song_view_tree">
+            <field name="model">songbook.song</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">song_tree</field>
+        </record>
+        <record model="ir.ui.view" id="song_view_form">
+            <field name="model">songbook.song</field>
+            <field name="type">form</field>
+            <field name="name">song_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_song_form">
+            <field name="name">Songs</field>
+            <field name="res_model">songbook.song</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_song_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="song_view_tree"/>
+            <field name="act_window" ref="act_song_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_song_form_view2">
+          <field name="sequence" eval="20"/>
+          <field name="view" ref="song_view_form"/>
+          <field name="act_window" ref="act_song_form"/>
+        </record>
+        <menuitem name="Songs" parent="menu_songbook" sequence="15" action="act_song_form" id="menu_song_form"/>
+
+    </data>
+</tryton>
